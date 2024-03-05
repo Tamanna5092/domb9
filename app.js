@@ -21,18 +21,12 @@ for(const btn of allBtn){
 
          selectedContainer.appendChild(li);
 
+        //  total cost function er value
+         totalCost('total-cost',parseInt(price));
 
-         const totalCost = document.getElementById('total-cost').innerText;
-         const convertedTotalCost = parseInt(totalCost);
-         const sum = convertedTotalCost + parseInt(price);
-        //  document.getElementById('total-cost').innerText = sum;
-
-        const grandTotalCost = document.getElementById('grand-total').innerText;
-        const convertedGrandTotalCost = parseInt(grandTotalCost);
-        const sum2 = convertedGrandTotalCost + sum;
-
-        setInnerText('total-cost',sum);
-        setInnerText('grand-total',sum2);
+        //  grand total cost er function er vlaue
+         grandTotalCost('grand-total', parseInt(price));
+        
 
         setInnerText('cart-count',count);
     })
@@ -41,4 +35,19 @@ for(const btn of allBtn){
 function setInnerText(id,value){
     document.getElementById(id).innerText = value;
     // console.log(id,value)
+}
+
+
+function totalCost(id,value){
+    const totalCost = document.getElementById(id).innerText;
+    const convertedTotalCost = parseInt(totalCost);
+    const sum = convertedTotalCost + parseInt(value);
+    setInnerText('total-cost',sum);
+}
+
+function grandTotalCost(id,value){
+    const grandTotalCost = document.getElementById('grand-total').innerText;
+    const convertedGrandTotalCost = parseInt(grandTotalCost);
+    const sum = convertedGrandTotalCost + parseInt(value);
+    setInnerText('grand-total',sum);
 }
