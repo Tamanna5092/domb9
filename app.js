@@ -21,6 +21,17 @@ for(const btn of allBtn){
 
          selectedContainer.appendChild(li);
 
+
+         const budget = document.getElementById('budget').innerText;
+         const convertedBudget = parseInt(budget);
+
+         if(convertedBudget-parseInt(price) < 0){
+            alert('Low budget please earn more!');
+            return
+         }
+
+         document.getElementById('budget').innerText = convertedBudget - parseInt(price);
+
         //  total cost function er value
          totalCost('total-cost',parseInt(price));
 
@@ -59,5 +70,7 @@ function grandTotalCost(category){
     else if(category == 'flight'){
         setInnerText('grand-total', convertedTotalCost + 500);
     }
-    
+    else{
+        setInnerText('grand-total', convertedTotalCost)
+    }
 }
