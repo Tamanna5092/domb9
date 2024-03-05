@@ -22,6 +22,18 @@ for(const btn of allBtn){
          selectedContainer.appendChild(li);
 
 
+         const totalCost = document.getElementById('total-cost').innerText;
+         const convertedTotalCost = parseInt(totalCost);
+         const sum = convertedTotalCost + parseInt(price);
+        //  document.getElementById('total-cost').innerText = sum;
+
+        const grandTotalCost = document.getElementById('grand-total').innerText;
+        const convertedGrandTotalCost = parseInt(grandTotalCost);
+        const sum2 = convertedGrandTotalCost + sum;
+
+        setInnerText('total-cost',sum);
+        setInnerText('grand-total',sum2);
+
         setInnerText('cart-count',count);
     })
 }
