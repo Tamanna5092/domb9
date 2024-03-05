@@ -24,7 +24,7 @@ for(const btn of allBtn){
         //  total cost function er value
          totalCost('total-cost',parseInt(price));
 
-        //  grand total cost er function er vlaue
+        //  grand total cost er function er value
          grandTotalCost('grand-total', parseInt(price));
         
 
@@ -45,9 +45,19 @@ function totalCost(id,value){
     setInnerText('total-cost',sum);
 }
 
-function grandTotalCost(id,value){
-    const grandTotalCost = document.getElementById('grand-total').innerText;
-    const convertedGrandTotalCost = parseInt(grandTotalCost);
-    const sum = convertedGrandTotalCost + parseInt(value);
-    setInnerText('grand-total',sum);
+function grandTotalCost(category){
+    console.log(category)
+    const totalCost = document.getElementById('total-cost').innerText;
+    const convertedTotalCost = parseInt(totalCost);
+
+    if(category == 'bus'){
+        setInnerText('grand-total', convertedTotalCost + 100);
+    }
+    else if(category == 'train'){
+        setInnerText('grand-total', convertedTotalCost - 200);
+    }
+    else if(category == 'flight'){
+        setInnerText('grand-total', convertedTotalCost + 500);
+    }
+    
 }

@@ -90,6 +90,7 @@ nav{
     font-size: 14px;
     color:white;
     margin-top: 15px;
+    cursor: pointer;
 }
 .cart{
     width: 100%;
@@ -123,6 +124,7 @@ border: none;
 background-color: rgb(135, 134, 133);
 color: white;
 font-size:15px;
+cursor: pointer;
 }
 .all-cat-btn{
     padding: 10px;
